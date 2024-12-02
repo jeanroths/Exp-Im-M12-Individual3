@@ -1,0 +1,94 @@
+# ========================
+# Unity generated files
+# ========================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# ========================
+# Asset Store and cache
+# ========================
+[Uu]ser[Ss]ettings/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.idea/
+*.tmproj
+
+# ========================
+# Extensions
+# ========================
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+*.module
+
+# ========================
+# Packed Assets
+# ========================
+*.unitypackage
+
+# ========================
+# Crash Reports
+# ========================
+sysinfo.txt
+
+# ========================
+# Collaborate generated
+# ========================
+*.collab
+
+# ========================
+# Uncomment this line if you have Git LFS setup
+# ========================
+# *.psd
+# *.tga
+
+# ========================
+# VS Code files (if using VS Code as editor)
+# ========================
+.vscode/
+
+# ========================
+# Rider files (if using JetBrains Rider as editor)
+# ========================
+.idea/
+*.sln.iml
+
+# ========================
+# MacOS
+# ========================
+.DS_Store
+
+# ========================
+# Windows
+# ========================
+Thumbs.db
+Desktop.ini
+
+# ========================
+# Linux
+# ========================
+*~
+
+# ========================
+# Build folders (optional)
+# ========================
+# Add specific platform build folders to ignore, for example:
+# Android/
+# iOS/
