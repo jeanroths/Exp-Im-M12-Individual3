@@ -7,5 +7,5 @@ links dos assets usados:
 
 ## Print dia 02/12 - seleção de assets e disposição na engine
 
-![alt text](image.png)
+![alt text](assets/image.png)
 

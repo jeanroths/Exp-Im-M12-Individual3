@@ -1,0 +1,11 @@
+Model Information:
+* title:	Darth Vader by Makeamo
+* source:	https://sketchfab.com/3d-models/darth-vader-by-makeamo-5b3371f4789c41eeaa691c9a3dfe1a96
+* author:	AFTONBLADET (https://sketchfab.com/wallander)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Darth Vader by Makeamo" (https://sketchfab.com/3d-models/darth-vader-by-makeamo-5b3371f4789c41eeaa691c9a3dfe1a96) by AFTONBLADET (https://sketchfab.com/wallander) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

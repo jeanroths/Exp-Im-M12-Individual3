@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lava
+* source:	https://sketchfab.com/3d-models/lava-7327dc1dafa34222bb0e1f71d7c5102b
+* author:	Kafu Dev (https://sketchfab.com/kafutschga)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lava" (https://sketchfab.com/3d-models/lava-7327dc1dafa34222bb0e1f71d7c5102b) by Kafu Dev (https://sketchfab.com/kafutschga) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
