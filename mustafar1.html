@@ -1,0 +1,115 @@
+<!-- Modelos - A-Frame -->
+ <!-- Texturas de: https://texturelabs.org/ -->
+ <html>
+    <head>
+      <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+      <script>
+AFRAME.registerComponent('scroll-texture', {
+  schema: {
+    speed: { type: 'number', default: 0.01 }
+  },
+  init: function () {
+    this.materials = [];
+    this.el.addEventListener('model-loaded', () => {
+      const object3D = this.el.getObject3D('mesh');
+      object3D.traverse((node) => {
+        if (node.isMesh && node.material && node.material.map) {
+          this.materials.push(node.material);
+        }
+      });
+    });
+  },
+  tick: function (time, timeDelta) {
+    this.materials.forEach((material) => {
+      if (material.map) {
+        material.map.offset.x += this.data.speed * (timeDelta / 1000);
+        material.map.needsUpdate = true;
+      }
+    });
+  }
+});
+      </script>
+      <script>
+        // Script para mudar de página quando o cursor apontar para o modelo "ani"
+        AFRAME.registerComponent("redirect-on-hover", {
+          init: function () {
+            this.el.addEventListener("click", function () {
+              window.location.href = "mustafar2.html"; // Substitua "outro.html" pelo caminho do seu HTML.
+            });
+          },
+        });
+      </script>
+    </head>
+    <body>
+      <a-scene>
+          <!-- Gerenciamento de Assets do A-Frame -->
+           <a-assets>
+              <!-- Fundo -->
+              <img id="fundo" src="./texturas/darksky.jpg" />
+              <audio id="soundbattle" src="I have the high ground scene Star Wars the revenge of the sith.mp3"></audio>
+              <a-asset-item id="chao-glb" src="./assets/lava(1).glb"/></a-asset-item>
+              <a-asset-item id="lava" src="./assets/lava_chunk.glb"/></a-asset-item>
+              <a-asset-item id="vulcao" src="./assets/Volcano/PUSHILIN_volcano.obj"></a-asset-item>
+              <a-asset-item id="vulcao-mtl" src="./assets/Volcano/PUSHILIN_volcano.mtl"></a-asset-item>
+              <a-asset-item id="plat-rock" src = "./assets/Rock.glb"></a-asset-item>
+              <a-asset-item id="ani" src="./assets/anakin_skywalker_the_clone_wars_season_7.glb"></a-asset-item>
+              <a-asset-item id="obi" src="./assets/obi-wan_kenobi_clone_wars_v1.glb"></a-asset-item> 
+           </a-assets> 
+
+         <a-sky src="#fundo"></a-sky>
+         <a-entity id="som" sound="src:#soundbattle; autoplay:true; volume:40"></a-entity>
+         <a-plane>
+            <a-entity 
+              gltf-model="#chao-glb"
+              position="0 -2 30"
+              >
+         
+            </a-entity>  
+          </a-plane>
+
+          <a-plane>
+          <a-entity
+            gltf-model="#lava"
+            position="0 -7.5 -18"
+            scale = "5 5 5"
+            scroll-texture="speed:0.005">
+          </a-entity>
+        </a-plane>
+        
+         
+         <a-entity 
+         obj-model="obj:#vulcao;  mtl:#vulcao-mtl"
+         position="-96 28 10"
+         rotation="0 120 0"
+         scale="100 100 100"></a-entity>
+
+         <a-entity 
+         gltf-model="#plat-rock"
+         position="-0.6 -1.911 7.044"
+         scale="6 2 8"
+         ></a-entity>
+
+         <a-entity 
+         gltf-model="#ani"
+         scale="0.01 0.01 0.01"
+         position="-0.4 -0.88  6.1"
+         rotation="0 12.347 0"
+         redirect-on-hover>
+        </a-entity>
+
+         <a-entity 
+         gltf-model="#obi"
+         scale="1.2 1.2 1.2"
+         position="-4.13 0.033 24.563 "
+         rotation="0 176.99 0">
+         </a-entity>
+
+         <a-entity position="6 0 0" rotation="0 90 0">
+          <a-camera>
+            <a-cursor fuse="true"></a-cursor>
+          </a-camera>
+         </a-entity>
+
+      </a-scene>
+    </body>
+  </html>

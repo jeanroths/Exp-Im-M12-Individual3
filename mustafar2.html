@@ -1,0 +1,124 @@
+<!-- Modelos - A-Frame -->
+ <!-- Texturas de: https://texturelabs.org/ -->
+ <html>
+    <head>
+      <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+      <script>
+AFRAME.registerComponent('scroll-texture', {
+  schema: {
+    speed: { type: 'number', default: 0.01 }
+  },
+  init: function () {
+    this.materials = [];
+    this.el.addEventListener('model-loaded', () => {
+      const object3D = this.el.getObject3D('mesh');
+      object3D.traverse((node) => {
+        if (node.isMesh && node.material && node.material.map) {
+          this.materials.push(node.material);
+        }
+      });
+    });
+  },
+  tick: function (time, timeDelta) {
+    this.materials.forEach((material) => {
+      if (material.map) {
+        material.map.offset.x += this.data.speed * (timeDelta / 1000);
+        material.map.needsUpdate = true;
+      }
+    });
+  }
+});
+      </script>
+
+<script>
+    // Script para mudar de página quando o cursor apontar para o modelo "ani"
+    AFRAME.registerComponent("redirect-on-hover", {
+      init: function () {
+        this.el.addEventListener("click", function () {
+          window.location.href = "https://youtube.com/clip/UgkxMB4n2ZV_q7u0EI21sMJkGrOSAnPQQPWG?si=bk4X-FL3OKYFEJ94"; // Substitua "outro.html" pelo caminho do seu HTML.
+        });
+      },
+    });
+  </script>
+    </head>
+    <body>
+      <a-scene>
+          <!-- Gerenciamento de Assets do A-Frame -->
+           <a-assets>
+              <!-- Fundo -->
+              <img id="fundo" src="./texturas/darksky.jpg" />
+              <audio id="soundimperial" src="Star Wars- The Imperial March (Darth Vader's Theme).mp3"></audio>
+              <a-asset-item id="chao-glb" src="./assets/lava(1).glb"/></a-asset-item>
+              <a-asset-item id="lava" src="./assets/lava_chunk.glb"/></a-asset-item>
+              <a-asset-item id="vulcao" src="./assets/Volcano/PUSHILIN_volcano.obj"></a-asset-item>
+              <a-asset-item id="vulcao-mtl" src="./assets/Volcano/PUSHILIN_volcano.mtl"></a-asset-item>
+              <a-asset-item id="plat-rock" src = "./assets/Rock.glb"></a-asset-item>
+              <a-asset-item id="darthvader" src="./assets/darth_vader_by_makeamo.glb"></a-asset-item>
+              <a-asset-item id="sidious" src="./assets/emperor_palpatine__darth_sidious.glb"></a-asset-item>
+              <a-asset-item id="ship" src="./assets/star_wars_imperial-class_star_destroyer.glb"><a-asset-item>
+           </a-assets> 
+
+         <a-sky src="#fundo" radius="5000"></a-sky>
+
+         <a-plane>
+            <a-entity 
+              gltf-model="#chao-glb"
+              position="0 -2 30"
+              >
+         
+            </a-entity>  
+          </a-plane>
+
+          <a-plane>
+          <a-entity
+            gltf-model="#lava"
+            position="0 -7.5 -18"
+            scale = "5 5 5"
+            scroll-texture="speed:0.005">
+          </a-entity>
+        </a-plane>
+        
+         <a-entity id="som" sound="src:#soundimperial; autoplay:true; volume:40"></a-entity>
+         <a-entity 
+         obj-model="obj:#vulcao;  mtl:#vulcao-mtl"
+         position="-96 28 10"
+         rotation="0 120 0"
+         scale="100 100 100"></a-entity>
+
+         <a-entity 
+         gltf-model="#plat-rock"
+         position="-0.6 -1.911 7.044"
+         scale="6 2 8"
+         ></a-entity>
+
+         <a-entity 
+         gltf-model="#darthvader"
+         scale="0.015 0.015 0.015"
+         position="2.345 -0.8 25.651"
+         rotation="0 12.347 0">
+        </a-entity>
+
+         <a-entity 
+         gltf-model="#sidious"
+         scale="1.2 1.2 1.2"
+         position="20.66 -4.195 16.901"
+         rotation="0 176.99 0"
+         redirect-on-hover>
+         </a-entity>
+
+         <a-entity
+          gltf-model="#ship"
+          scale="0.4 0.4 0.4"
+          position="0 150 -600"
+          animation="property: position; to: 0 250 600; dur: 100000; loop: true; easing: linear;">
+         </a-entity>
+
+         <a-entity position="6 0 0" rotation="0 90 0">
+          <a-camera>
+            <a-cursor fuse="true"></a-cursor>
+          </a-camera>
+         </a-entity>
+
+      </a-scene>
+    </body>
+  </html>
