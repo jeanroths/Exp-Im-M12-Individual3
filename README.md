@@ -65,7 +65,7 @@ Este projeto recria o ambiente de Mustafar, o icônico planeta vulcânico da sag
 
 ## Estrutura do projeto
 
-/
+```bash
 ├── assets/                         # Modelos 3D e texturas
 ├── texturas/                       # Imagens para fundo e solo
 ├── mustafar1.html                  # Primeira cena
@@ -73,5 +73,4 @@ Este projeto recria o ambiente de Mustafar, o icônico planeta vulcânico da sag
 ├── README.md                       # Este arquivo
 ├── Imperial-march.mp3              # Musica marcha imperial
 ├── I-have-the-high-ground.mp3      # Musica batalha final
-
-
+```
